@@ -19,6 +19,7 @@ def generate_launch_description():
     ## ***** Nodes *****
     cartographer_node = Node(
         package="cartographer_ros",
+        
         executable="cartographer_node",
         parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}],
         arguments=[
@@ -32,6 +33,7 @@ def generate_launch_description():
         remappings=[
             ("/imu", "/imu"),
             ("/odom", "/odometry"),
+            ("/scan", "/scan"),
         ],
     )
 
